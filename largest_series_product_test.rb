@@ -19,7 +19,6 @@ class LargestSeriesProductTest < Minitest::Test
   end
 
   def test_can_find_the_largest_product_of_3_with_numbers_in_order
-    skip
     assert_equal 504, Series.new('0123456789').largest_product(3)
   end
 

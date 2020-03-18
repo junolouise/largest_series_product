@@ -13,7 +13,7 @@ class Series
 
   def largest_product(substring_length)
     digits_array = string_to_int_array(@string_of_digits)
-    span_combinations = digits_array.each_cons(2)
+    span_combinations = digits_array.each_cons(substring_length)
     multiplied_combinations = span_combinations.map do |consecutive_numbers|
       consecutive_numbers.inject(:*)
     end
