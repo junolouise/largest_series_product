@@ -12,22 +12,15 @@ class Series
   end
 
   def largest_product(substring_length)
-    if @string_of_digits.length == substring_length
-      num_string_to_int_array
-      @digits_array.inject(:*)
-    else
-      num_string_to_int_array
-      sliced_number_array = @digits_array.each_cons(2).to_a
-      
-      multiplied_combinations = sliced_number_array.map do |consecutive_numbers|
-        consecutive_numbers.inject(:*)
-      end
-
-      return multiplied_combinations.max
+    digits_array = string_to_int_array(@string_of_digits)
+    span_combinations = digits_array.each_cons(2)
+    multiplied_combinations = span_combinations.map do |consecutive_numbers|
+      consecutive_numbers.inject(:*)
     end
+    multiplied_combinations.max
   end
 
-  def num_string_to_int_array
-    @digits_array = @string_of_digits.chars.map(&:to_i)
+  def string_to_int_array(number_string)
+    number_string.chars.map(&:to_i)
   end
 end
