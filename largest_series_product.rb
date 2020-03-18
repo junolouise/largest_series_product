@@ -13,6 +13,7 @@ class Series
 
   def largest_product(substring_length)
     raise ArgumentError if @string_of_digits.length < substring_length
+    raise ArgumentError if @string_of_digits.chars.any? { |char| ('a'..'z').include? char.downcase }
 
     digits_array = string_to_int_array(@string_of_digits)
     span_combinations = digits_array.each_cons(substring_length)

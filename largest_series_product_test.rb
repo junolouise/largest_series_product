@@ -48,25 +48,13 @@ class LargestSeriesProductTest < Minitest::Test
     end
   end
 
-  def test_reports_1_for_empty_string_and_empty_product_0_span
-    skip
-    assert_equal 1, Series.new('').largest_product(0)
-  end
-
-  def test_reports_1_for_nonempty_string_and_empty_product_0_span
-    skip
-    assert_equal 1, Series.new('123').largest_product(0)
-  end
-
   def test_rejects_empty_string_and_nonzero_span
-    skip
     assert_raises(ArgumentError) do
       Series.new('').largest_product(1)
     end
   end
 
   def test_rejects_invalid_character_in_digits
-    skip
     assert_raises(ArgumentError) do
       Series.new('1234a5').largest_product(2)
     end
