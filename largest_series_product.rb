@@ -13,8 +13,14 @@ class Series
 
   def largest_product(substring_length)
     if @string_of_digits.length == substring_length
+      p @string_of_digits
       digits_array = @string_of_digits.chars.map(&:to_i)
+      p digits_array
       digits_array.inject(:*)
+    else
+      digits_array = @string_of_digits.chars.map(&:to_i)
+      highest_numbers = digits_array.max(2)
+      highest_numbers.inject(:*)
     end
   end
 end
