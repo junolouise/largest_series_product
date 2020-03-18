@@ -17,8 +17,13 @@ class Series
       @digits_array.inject(:*)
     else
       num_string_to_int_array
-      highest_numbers = @digits_array.max(2)
-      highest_numbers.inject(:*)
+      sliced_number_array = @digits_array.each_cons(2).to_a
+      
+      multiplied_combinations = sliced_number_array.map do |consecutive_numbers|
+        consecutive_numbers.inject(:*)
+      end
+
+      return multiplied_combinations.max
     end
   end
 

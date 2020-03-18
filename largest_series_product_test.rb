@@ -15,7 +15,6 @@ class LargestSeriesProductTest < Minitest::Test
   end
 
   def test_can_find_the_largest_product_of_2
-    skip
     assert_equal 48, Series.new('576802143').largest_product(2)
   end
 
