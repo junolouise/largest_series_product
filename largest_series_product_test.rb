@@ -23,32 +23,26 @@ class LargestSeriesProductTest < Minitest::Test
   end
 
   def test_can_find_the_largest_product_of_3
-    skip
     assert_equal 270, Series.new('1027839564').largest_product(3)
   end
 
   def test_can_find_the_largest_product_of_5_with_numbers_in_order
-    skip
     assert_equal 15_120, Series.new('0123456789').largest_product(5)
   end
 
   def test_can_get_the_largest_product_of_a_big_number
-    skip
     assert_equal 23_520, Series.new('73167176531330624919225119674426574742355349194934').largest_product(6)
   end
 
   def test_reports_zero_if_the_only_digits_are_zero
-    skip
     assert_equal 0, Series.new('0000').largest_product(2)
   end
 
   def test_reports_zero_if_all_spans_include_zero
-    skip
     assert_equal 0, Series.new('99099').largest_product(3)
   end
 
   def test_rejects_span_longer_than_string_length
-    skip
     assert_raises(ArgumentError) do
       Series.new('123').largest_product(4)
     end
